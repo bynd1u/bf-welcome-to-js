@@ -11,20 +11,16 @@
 
 // trace the program a few times with different values
 
-let a = 'Pieter';
-// let a = 'Blake';
-// let a = 'George';
+let a = 'Peter'; // [a, declare, undefined], [a, initialize, 'Peter']
 
-let b = 'Rabbit';
-// let b = 'Wozzeck';
-// let b = 'Schoenberg';
+let b = 'Rabbit'; // [b, declare, undefined], [b, initialize, 'Rabbit']
 
-let c = a + ' ' + b;
+let c = a + ' ' + b; // [c, declare, undefined], [a, read, 'Peter'], [b, read, 'Rabbit'], [c, initialize, 'Peter Rabbit']
 
-let d = 'hello ' + c;
+let d = 'hello ' + c; // [d, declare, undefined], [c, read, 'Peter Rabbit'], [d, initialize, 'hello Peter Rabbit']
 
-console.log(d);
+console.log(d); // [d, log, 'hello Peter Rabbit']
 
-d = 'good bye ' + c;
+d = 'good bye ' + c; // [c, read, 'Peter Rabbit'], [d, assign, 'good bye Peter Rabbit']
 
-console.log(d);
+console.log(d); // [d, log, 'good bye Peter Rabbit']

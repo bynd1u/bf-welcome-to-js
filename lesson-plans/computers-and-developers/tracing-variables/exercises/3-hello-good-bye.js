@@ -6,7 +6,7 @@
 
 */
 
-let first = 'Pieter';
+let first = 'Peter';
 let last = 'Rabbit';
 
 let fullName = first + ' ' + last;
