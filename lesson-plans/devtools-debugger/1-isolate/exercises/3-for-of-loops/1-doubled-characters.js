@@ -7,7 +7,11 @@ while (text === null) {
 
 let doubled = '';
 for (let nextChar of text) {
-  doubled = doubled + nextChar + nextChar;
+  if (doubled === '') {
+    doubled = nextChar + '-' + nextChar;
+  } else {
+    doubled = doubled + '-' + nextChar + '-' + nextChar;
+  }
 }
 
 alert(doubled);

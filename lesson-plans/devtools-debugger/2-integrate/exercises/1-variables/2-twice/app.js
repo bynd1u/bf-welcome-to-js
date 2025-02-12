@@ -15,9 +15,19 @@ whenFormDataChanges('user-data', () => {
   // read a string from the <input> with id "to-double"
   let text = readString('to-double');
 
-  // --- repeat the text ---
+  let doubled = '';
+  for (let nextChar of text) {
+    doubled = doubled + nextChar + nextChar;
+  }
 
-  let repeated = text + '\n' + text;
+  // --- repeat the text ---
+  let amountOfCopies = 4;
+
+  let repeated = '';
+
+  for (let i = 1; i <= amountOfCopies; i++) {
+    repeated += `${i}. ${doubled}\n`;
+  }
 
   // --- display the repeated text ---
 

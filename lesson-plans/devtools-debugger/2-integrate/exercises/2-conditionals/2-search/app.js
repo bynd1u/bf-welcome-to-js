@@ -33,10 +33,10 @@ whenFormDataChanges('search-input', () => {
 
   let message = '';
 
-  if (doesExist) {
-    message = 'yes';
+  if (!doesExist) {
+    message = `"${searchThis}" doesn't contain "${findThis}"`;
   } else {
-    message = 'no';
+    message = `"${searchThis}" contains "${findThis}"`;
   }
 
   // --- display the search results ---
