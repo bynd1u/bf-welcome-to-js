@@ -13,15 +13,14 @@ whenFormDataChanges('reversify', () => {
   // --- read user input ---
 
   let text = readString('to-reverse');
-  let screaming = readBoolean('loud');
-
-  console.log(text, screaming);
 
   // --- reverse the string input ---
 
   let reversed = '';
   for (let character of text) {
-    reversed = character + reversed;
+    if (!reversed.includes(character.toLowerCase())) {
+      reversed = character + reversed;
+    }
   }
 
   console.log(reversed);
@@ -29,8 +28,10 @@ whenFormDataChanges('reversify', () => {
   // --- set to upper or lower case ---
 
   let finalText = '';
-  if (screaming) {
+  if (reversed.length >= 10) {
     finalText = reversed.toUpperCase();
+  } else if (reversed.length < 10 && reversed.length >= 5) {
+    finalText = reversed;
   } else {
     finalText = reversed.toLowerCase();
   }
